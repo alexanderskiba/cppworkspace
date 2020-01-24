@@ -26,7 +26,7 @@ public:
       	string  result_name = "";
 	    string  result_surname = "";
 
-	    if ((fio_name.size() == 0) && (fio_surname.size() == 0))    {
+	    if ((fio_name.empty()) && (fio_surname.empty()))    {
 	        return "Incognito";
 	                                                            }
 	   else {
@@ -43,11 +43,13 @@ public:
                                             }
 
         //no name
-        if ((result_name.size() == 0) && (result_surname.size() != 0))  {
+        //if ((result_name.size() == 0) && (result_surname.size() != 0))  {
+            if(fio_name.empty()|| year<fio_name.begin()->first ){
             return (result_surname + " with unknown first name");
                                                                         }
         //no last_name
         //else if ((result_name.size() != 0) && (result_surname.size() == 0))
+
         else if (fio_surname.empty()|| year< fio_surname.begin() ->first)	{
             return (result_name + " with unknown last name");
                                                                             }
@@ -90,4 +92,20 @@ int main() {
 
 	return 0;
 }
+// Целевой вывод:
+// Incognito
+// Incognito
+// Incognito
+// Incognito
+// 1965_2nd with unknown first name
+// 1966_2nd with unknown first name
+// 1967_2nd with unknown first name
+// 1968_2nd with unknown first name
+// 1900_1st with unknown last name
+// 1920_1st with unknown last name
+// 1950_1st with unknown last name
+// 1965_1st 1965_2nd
+// 1965_1st 1966_2nd
+// 1965_1st 1967_2nd
+// 1965_1st 1968_2nd
 
