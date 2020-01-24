@@ -36,12 +36,15 @@ public:
                                                                                     }
         else    {
             for (auto item : fio_name)  {
-        if (item.first <= year) { result_name = item.second; }
+        if (item.first <= year) {
+        	result_name = item.second;
+        }
                                         }
             for (auto item : fio_surname)   {
-        if (item.first <= year) { result_surname = item.second; }
+        if (item.first <= year) {
+        	result_surname = item.second;
+        }
                                             }
-
         //no name
         //if ((result_name.size() == 0) && (result_surname.size() != 0))  {
             if(fio_name.empty()|| year<fio_name.begin()->first ){
