@@ -24,15 +24,18 @@ public:
 		source = "Moscow";
 		destination = "Saint Petersburg";
 		UpdateLength();
+		cout << "Default constructed\n";
 	}
 	Route(const string& new_source, const string& new_destination){
 		source = new_source;
 		destination = new_destination;
 		UpdateLength();
+		cout << "Constructed\n";
 	}
 	~Route(){ // После вывода всех элементов вектора деструктор уничтожит объект
+		cout <<"Destructed\n";
 		for (const string& entry: compute_distance_log) {
-			cout << entry << "\n";
+			//cout << entry << "\n";
 		}
 	}
 	string GetSource() const {
@@ -78,10 +81,25 @@ void ReverseRoute(Route& route){
 	route.SetDestination(old_source);
 }
 
-int main() {
-	Route route("Moscow", "Saint Petersburg");
-	route.SetSource("Vyborg");
-	route.SetDestination("Vologda");
+void WorthLess(Route route){
+	cout << 2 << "\n";
+}
+Route GetRoute(){
+	cout << 1 << "\n";
+	return{};
+}
 
+int main() {
+//	Route route("Moscow", "Saint Petersburg");
+//	route.SetSource("Vyborg");
+//	route.SetDestination("Vologda");
+////	for(int i : {0,1}){
+//		cout << "Step " << i << ": " << 1 << "\n";
+//		Route route;
+//		cout << "Step " << i << ": " << 2 << "\n";
+//	}
+//	cout << "End\n";
+ GetRoute();
+cout << 2 << "\n";
 	return 0;
 }
