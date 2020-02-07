@@ -34,8 +34,14 @@ public:
     if (operation == '+') {
       return source_value + value;
     }
-    else {  // operation == '-'
+    else if (operation == '-') {  // operation == '-'
       return source_value - value;
+    }
+    else if (operation == '*') {
+    	return source_value * value;
+    }
+    else /*(operation == '/')*/{
+    	return source_value / value;
     }
   }
   void Invert() {
@@ -48,7 +54,7 @@ public:
     else if (operation == '*') {
     	operation = '/';
     }
-    else {
+    else if (operation == '/') {
     	operation = '*';
     }
   }
